@@ -1,35 +1,34 @@
 <template>
   <div class="todo-wrap">
     <div class="caption">
-      <span class="item" @click="onToggleMonth('prev')">
+      <span class="item" @click="handleToggleMonth('prev')">
         <i class="prev"></i>
       </span>
       <time class="time">{{curYearMonth}}</time>
-      <span class="item" @click="onToggleMonth('next')">
+      <span class="item" @click="handleToggleMonth('next')">
         <i class="next"></i>
       </span>
     </div>
-    <main class="main todo-main">
+    <div class="container">
       <ul class="week">
-        <li class="item" v-for="(item, index) of week" :key="index">{{item}}</li>
+        <li class="item" v-for="(item, index) in _week" :key="index">{{item}}</li>
       </ul>
       <ul class="data clear">
-        <li class="item invalid" v-for="(item, index) of startDay" :key="index - startDay">
-          <div class="text-box">
-            <span class="text">{{prevMonthDays + 1 + index - startDay}}</span>
-          </div>
+        <li class="item invalid" v-for="(item, index) in startDay" :key="index - startDay">
+          <span class="lunar" v-if="isLunar">{{handleLunar(prevYear, prevMonth, prevMonthDays + 1 + index - startDay)}}</span>
+          <span class="text">{{prevMonthDays + 1 + index - startDay}}</span>
         </li>
-        <li class="item" v-for="(item, index) of curMonthDays" :key="index">
-          <div class="text-box">
-            <span class="text" :class="{active: curDay == index + 1}">{{item.date}}</span>
-            <p class="todo" :class="{on: index == isItem.index && isIndex == _index}" v-for="(_item, _index) of item.todo" :key="_index" @click="onToggleTodo(item.todo[_index], index, _index, $event)">{{_item.title}}</p>
-          </div>
+        <li class="item" v-for="(item, index) in curMonthDays" :key="index">
+          <span class="lunar" v-if="isLunar">{{handleLunar(curYear, curMonth, item.date)}}</span>
+          <span class="text" :class="{active: curDay == index + 1}">{{item.date}}</span>
+          <template v-for="(_item, _index) in item.todo">
+            <p class="todo" :class="{on: index == isItem.index && isIndex == _index}" :key="_index" @click="handleToggleTodo(item.todo[_index], index, _index, $event)" :title="_item.title" v-if="_index < 2">{{_item.title}}</p>
+          </template>
           <div class="todo-item" :class="{left: isShowLeft, top: isShowTop}" v-if="index == isItem.index && isIndex == isItem._index" :style="posTop">
             <h2 class="title">{{isItem.desc.caption}}</h2>
             <div class="time">{{'时间：' + isItem.desc.time}}</div>
             <div class="author-box">
               <span class="author">{{'作者：' + isItem.desc.author}}</span>
-              <span class="job">{{isItem.desc.job}}</span>
             </div>
             <div class="link-box">
               <a class="link" :href="isItem.desc.link">查看GitHub</a>
@@ -41,33 +40,39 @@
             </div>
           </div>
         </li>
-        <li class="item invalid" v-for="(item, index) of endDay" :key="curMonthDays + index + 1">
-          <div class="text-box">
-            <span class="text">{{item}}</span>
-          </div>
+        <li class="item invalid" v-for="(item, index) in endDay" :key="curMonthDays + index + 1">
+          <span class="lunar" v-if="isLunar">{{handleLunar(nextYear, nextMonth, item)}}</span>
+          <span class="text">{{item}}</span>
         </li>
       </ul>
-    </main>
+    </div>
   </div>
 </template>
 
 <script>
+import calendar from './js/calendar';
+
 const todoObj = {
   title: '备忘录',
   desc: {
     caption: '我的github项目',
-    time: '2018.02.27　　2018.03.27',
+    time: '2018.02.27',
     author: 'shaw',
-    job: '前端开发',
     num: 369,
     link: 'https://github.com/chilliness'
   }
 };
 
 export default {
+  name: 'Todo',
   props: {
     isWest: {
       // 是否启用西方模式
+      type: Boolean,
+      default: true
+    },
+    isLunar: {
+      // 是否开启农历
       type: Boolean,
       default: true
     }
@@ -85,11 +90,17 @@ export default {
       isItem: {},
       isIndex: -1,
       isShowLeft: false,
-      isShowTop: false
+      isShowTop: false,
+      curYear: 0,
+      curMonth: 0,
+      prevYear: 0,
+      prevMonth: 0,
+      nextYear: 0,
+      nextMonth: 0
     };
   },
   computed: {
-    week() {
+    _week() {
       let arr = ['周一', '周二', '周三', '周四', '周五', '周六', '周日'];
       if (this.isWest) {
         arr.unshift(arr.pop());
@@ -97,21 +108,25 @@ export default {
       return arr;
     }
   },
-  created() {
+  mounted() {
     let date = new Date();
     this.curDay = date.getDate();
-    this.onFormatDate(date.getFullYear(), date.getMonth() + 1);
+    this.handleFormatDate(date.getFullYear(), date.getMonth() + 1);
   },
   methods: {
-    onToggleTodo(item, index, _index, ev) {
+    handleLunar(year, month, date) {
+      let { IMonthCn, IDayCn } = calendar.solar2lunar(year, month, date);
+      return IMonthCn + IDayCn;
+    },
+    handleToggleTodo(item, index, _index, ev) {
       let parent = ev.target.parentNode.getBoundingClientRect();
       let top = ev.target.getBoundingClientRect().top - parent.top + 'px';
       let right = parent.right + 330;
       let bottom = ev.target.getBoundingClientRect().top + 213;
-      let todoEl = document.querySelector('.todo-main').getBoundingClientRect();
-      // 判断现实层应该是在左边还是右边
+      let todoEl = document.querySelector('.container').getBoundingClientRect();
+      // 判断显示层应该是在左边还是右边
       this.isShowLeft = right > todoEl.right;
-      // 判断现实层应该是在下边还是上边
+      // 判断显示层应该是在下边还是上边
       this.isShowTop = bottom > todoEl.bottom;
       if (this.isShowTop) {
         bottom =
@@ -120,20 +135,45 @@ export default {
       } else {
         this.posTop = { top };
       }
-      if (this.isIndex == _index && this.isItem.index == index) {
+      if (this.isIndex === _index && this.isItem.index === index) {
         this.isIndex = -1;
       } else {
         this.isIndex = _index;
       }
       this.isItem = { ...item, index, _index };
     },
-    onFormatDate(year, month) {
-      month > 12 && (++year, (month = 1));
-      month < 1 && (--year, (month = 12));
+    handleFormatDate(year, month) {
+      if (month > 12) {
+        ++year;
+        month = 1;
+      } else if (month < 1) {
+        --year;
+        month = 12;
+      }
+
+      this.curYear = year;
+      this.curMonth = month;
+
+      let prevDate = new Date(year, month);
+      this.prevYear = prevDate.getFullYear();
+      this.prevMonth = prevDate.getMonth() - 1;
+
+      if (this.prevMonth === 0) {
+        --this.prevYear;
+        this.prevMonth = 12;
+      } else if (this.prevMonth === -1) {
+        --this.prevYear;
+        this.prevMonth = 11;
+      }
+
+      let nextDate = new Date(year, month);
+      this.nextYear = nextDate.getFullYear();
+      this.nextMonth = nextDate.getMonth() + 1;
+
       // 输出年月
-      this.curYearMonth = `${year}年${month.toString().padStart(2, 0)}月`;
+      this.curYearMonth = `${year}年${String(month).padStart(2, '0')}月`;
       // 获取当前月总天数
-      let allDays = this.onMonthDays(year, month);
+      let allDays = this.handleMonthDays(year, month);
       this.curMonthDays = [];
       for (let i = 0; i < allDays; i++) {
         let item = { date: i + 1 };
@@ -146,33 +186,42 @@ export default {
         this.curMonthDays.push(item);
       }
       // 获取上月总天数
-      this.prevMonthDays = this.onMonthDays(year, month - 1);
+      this.prevMonthDays = this.handleMonthDays(year, month - 1);
       // 获取下月总天数
-      this.nextMonthDays = this.onMonthDays(year, month + 1);
-      this.onStartAndEndWeek(year, month);
+      this.nextMonthDays = this.handleMonthDays(year, month + 1);
+      this.handleStartAndEndWeek(year, month, this.curMonthDays.length);
     },
-    onMonthDays(year, month) {
-      // 获取指定月份总天数
-      let date = new Date(year, month, 0);
-      return date.getDate();
+    handleMonthDays(year, month) {
+      return new Date(year, month, 0).getDate();
     },
-    onStartAndEndWeek(year, month) {
+    handleStartAndEndWeek(year, month, monthDays) {
       this.startDay = new Date(year, month - 1, 0).getDay();
       this.endDay =
         new Date(year, month, 0).getDay() &&
         7 - new Date(year, month, 0).getDay();
       if (this.isWest) {
         this.endDay = 7 - (new Date(year, month, 0).getDay() + 1);
-        if (++this.startDay == 7) {
+        if (++this.startDay === 7) {
           this.startDay = 0;
         }
       }
+
+      if (
+        Math.ceil(monthDays / 7) < 6 &&
+        Math.ceil((monthDays + this.startDay + this.endDay + 7) / 7) < 7
+      ) {
+        if (this.startDay === 0) {
+          this.startDay += 7;
+        } else {
+          this.endDay += 7;
+        }
+      }
     },
-    onToggleMonth(str = 'next') {
+    handleToggleMonth(str = 'next') {
       this.isIndex = -1;
       let [year, month] = this.curYearMonth.match(/\d+/g);
-      str == 'next' ? ++month : --month;
-      this.onFormatDate(year, month);
+      str === 'next' ? ++month : --month;
+      this.handleFormatDate(year, month);
     }
   }
 };
@@ -181,7 +230,9 @@ export default {
 <style lang="scss" scoped>
 .todo-wrap {
   font-size: 16px;
-  min-width: 117px;
+  min-width: 768px;
+  max-width: 1024px;
+  margin: 0 auto;
   .caption {
     display: flex;
     justify-content: center;
@@ -219,7 +270,7 @@ export default {
       padding: 0 25px;
     }
   }
-  .main {
+  .container {
     font-size: 14px;
     .item {
       flex: 0 0 calc(100% / 7);
@@ -250,39 +301,50 @@ export default {
       .item {
         position: relative;
         float: left;
-        padding-top: calc(100% / 7);
         border-top: 1px solid #e5e5e5;
         border-right: 1px solid #e5e5e5;
+        &:before {
+          content: '';
+          float: left;
+          padding-top: 100%;
+        }
+        &:after {
+          content: '';
+          display: block;
+          clear: both;
+        }
         &.invalid {
           color: #ccc;
         }
-        .text-box {
+        .lunar {
           position: absolute;
-          left: 0;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          padding: 39px 6px;
+          left: 10px;
+          top: 10px;
+          font-size: 12px;
+        }
+        .text {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+        }
+        .todo {
+          line-height: 19px;
+          margin: 6px 6px 0;
+          padding: 5px 10px;
+          font-size: 12px;
+          color: #666;
+          cursor: pointer;
+          border-radius: 2px;
+          background: #f2f2f2;
+          white-space: nowrap;
           overflow: hidden;
-          .text {
-            position: absolute;
-            right: 10px;
-            top: 10px;
+          text-overflow: ellipsis;
+          &:nth-of-type(1) {
+            margin-top: 35px;
           }
-          .todo {
-            position: relative;
-            line-height: 19px;
-            margin-top: 6px;
-            padding: 5px 10px;
-            font-size: 12px;
-            color: #666;
-            cursor: pointer;
-            border-radius: 2px;
-            background: #f2f2f2;
-            &.on {
-              color: #0a7b5d;
-              background: #c6ede3;
-            }
+          &.on {
+            color: #0a7b5d;
+            background: #c6ede3;
           }
         }
         .todo-item {
@@ -298,7 +360,7 @@ export default {
           background: #fff;
           box-shadow: 0 2px 10px #ccc;
           box-sizing: border-box;
-          &::before {
+          &:before {
             content: '';
             position: absolute;
             left: -8px;
@@ -314,7 +376,7 @@ export default {
             left: initial;
             right: 100%;
             transform: translateX(-15px);
-            &::before {
+            &:before {
               left: initial;
               right: -8px;
               transform: rotate(135deg);
@@ -322,7 +384,7 @@ export default {
           }
           &.top {
             top: initial;
-            &::before {
+            &:before {
               top: initial;
               bottom: 4px;
             }
@@ -341,10 +403,6 @@ export default {
             margin-top: 17px;
             font-size: 14px;
             color: #666;
-            .job {
-              margin-left: 16px;
-              color: #17b68c;
-            }
           }
           .link-box {
             display: flex;

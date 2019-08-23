@@ -1,7 +1,7 @@
-import TodoComponent from './todo.component.vue';
+import index from './index.vue';
 
 export default {
   install(Vue) {
-    Vue.component('app-todo', TodoComponent);
+    Vue.component('Todo', index);
   }
 };

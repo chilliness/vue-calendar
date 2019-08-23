@@ -1,44 +1,52 @@
 ## 日历组件
 
-``` bash
-A Vue.js project
+> 亮点
 
-本实例是基于vue 2.0制作的普通日历组件和带有备忘录的日历组件
+``` bash
+1、原生JavaScript实现，无须引入第三方
+
+2、所有组件均支持全局引入和组件内引入
+
+3、支持农历显示，可根据需要开启或关闭，默认开启
+
+4、支持中、西方模式，可根据喜好自行切换，默认西方模式
 ```
 
 > 效果
 
-![日历效果](/demo/GIF01.gif)
-![带备忘录日历效果](/demo/GIF02.gif)
+![最终效果](/demo/demo.gif)
 
 > 注意事项
 
 ``` bash
-1、本实例是用vue-cli提供的webpack模板构建
+1、CSS代码使用Scss编写
 
-2、CSS代码使用了Sass编写
+2、所有数据和组件均在src/components文件夹下，以文件夹划分
 
-3、普通日历组件路由地址为home
-
-4、带有备忘录的日历组件路由地址为todo
+3、todo组件数据为随机模拟数据，可根据业务需求自行定制和扩展
 ```
 
-> 最后一句
-
-本实例用到了vue + vue-router等。
-
-## Build Setup
-
-``` bash
-# install dependencies
+## Project setup
+```
 npm install
+```
 
-# serve with hot reload at localhost:8080
-npm run dev
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-# build for production with minification
+### Compiles and minifies for production
+```
 npm run build
+```
 
-# build for production and view the bundle analyzer report
-npm run build --report
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
 ```

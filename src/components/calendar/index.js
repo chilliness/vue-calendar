@@ -1,7 +1,7 @@
-import CalendarComponent from './calendar.component.vue';
+import index from './index.vue';
 
 export default {
   install(Vue) {
-    Vue.component('app-calendar', CalendarComponent);
+    Vue.component('Calendar', index);
   }
 };

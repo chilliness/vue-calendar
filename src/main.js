@@ -1,16 +1,13 @@
 import Vue from 'vue';
-import App from './App';
+import App from './App.vue';
 import router from './router';
-import CalendarComponent from './components/calendar';
-
-import './common/scss/index.scss';
+import store from './store';
+import './common/scss/reset.scss';
 
 Vue.config.productionTip = false;
-Vue.use(CalendarComponent);
 
-/* eslint-disable no-new */
 new Vue({
-  el: '#app',
   router,
+  store,
   render: h => h(App)
-});
+}).$mount('#app');
