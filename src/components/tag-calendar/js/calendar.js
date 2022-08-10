@@ -219,7 +219,7 @@ export default {
     0x0a2d0,
     0x0d150,
     0x0f252, // 2090-2099
-    0x0d520
+    0x0d520,
   ], // 2100
 
   /**
@@ -234,7 +234,18 @@ export default {
    * @Array Of Property trans["甲","乙","丙","丁","戊","己","庚","辛","壬","癸"]
    * @return Cn string
    */
-  Gan: ['\u7532', '\u4e59', '\u4e19', '\u4e01', '\u620a', '\u5df1', '\u5e9a', '\u8f9b', '\u58ec', '\u7678'],
+  Gan: [
+    "\u7532",
+    "\u4e59",
+    "\u4e19",
+    "\u4e01",
+    "\u620a",
+    "\u5df1",
+    "\u5e9a",
+    "\u8f9b",
+    "\u58ec",
+    "\u7678",
+  ],
 
   /**
    * 天干地支之地支速查表
@@ -242,7 +253,20 @@ export default {
    * @trans["子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"]
    * @return Cn string
    */
-  Zhi: ['\u5b50', '\u4e11', '\u5bc5', '\u536f', '\u8fb0', '\u5df3', '\u5348', '\u672a', '\u7533', '\u9149', '\u620c', '\u4ea5'],
+  Zhi: [
+    "\u5b50",
+    "\u4e11",
+    "\u5bc5",
+    "\u536f",
+    "\u8fb0",
+    "\u5df3",
+    "\u5348",
+    "\u672a",
+    "\u7533",
+    "\u9149",
+    "\u620c",
+    "\u4ea5",
+  ],
 
   /**
    * 天干地支之地支速查表<=>生肖
@@ -250,7 +274,20 @@ export default {
    * @trans["鼠","牛","虎","兔","龙","蛇","马","羊","猴","鸡","狗","猪"]
    * @return Cn string
    */
-  Animals: ['\u9f20', '\u725b', '\u864e', '\u5154', '\u9f99', '\u86c7', '\u9a6c', '\u7f8a', '\u7334', '\u9e21', '\u72d7', '\u732a'],
+  Animals: [
+    "\u9f20",
+    "\u725b",
+    "\u864e",
+    "\u5154",
+    "\u9f99",
+    "\u86c7",
+    "\u9a6c",
+    "\u7f8a",
+    "\u7334",
+    "\u9e21",
+    "\u72d7",
+    "\u732a",
+  ],
 
   /**
    * 24节气速查表
@@ -258,7 +295,32 @@ export default {
    * @trans["小寒","大寒","立春","雨水","惊蛰","春分","清明","谷雨","立夏","小满","芒种","夏至","小暑","大暑","立秋","处暑","白露","秋分","寒露","霜降","立冬","小雪","大雪","冬至"]
    * @return Cn string
    */
-  solarTerm: ['\u5c0f\u5bd2', '\u5927\u5bd2', '\u7acb\u6625', '\u96e8\u6c34', '\u60ca\u86f0', '\u6625\u5206', '\u6e05\u660e', '\u8c37\u96e8', '\u7acb\u590f', '\u5c0f\u6ee1', '\u8292\u79cd', '\u590f\u81f3', '\u5c0f\u6691', '\u5927\u6691', '\u7acb\u79cb', '\u5904\u6691', '\u767d\u9732', '\u79cb\u5206', '\u5bd2\u9732', '\u971c\u964d', '\u7acb\u51ac', '\u5c0f\u96ea', '\u5927\u96ea', '\u51ac\u81f3'],
+  solarTerm: [
+    "\u5c0f\u5bd2",
+    "\u5927\u5bd2",
+    "\u7acb\u6625",
+    "\u96e8\u6c34",
+    "\u60ca\u86f0",
+    "\u6625\u5206",
+    "\u6e05\u660e",
+    "\u8c37\u96e8",
+    "\u7acb\u590f",
+    "\u5c0f\u6ee1",
+    "\u8292\u79cd",
+    "\u590f\u81f3",
+    "\u5c0f\u6691",
+    "\u5927\u6691",
+    "\u7acb\u79cb",
+    "\u5904\u6691",
+    "\u767d\u9732",
+    "\u79cb\u5206",
+    "\u5bd2\u9732",
+    "\u971c\u964d",
+    "\u7acb\u51ac",
+    "\u5c0f\u96ea",
+    "\u5927\u96ea",
+    "\u51ac\u81f3",
+  ],
 
   /**
    * 1900-2100各年的24节气日期速查表
@@ -266,207 +328,207 @@ export default {
    * @return 0x string For splice
    */
   sTermInfo: [
-    '9778397bd097c36b0b6fc9274c91aa',
-    '97b6b97bd19801ec9210c965cc920e',
-    '97bcf97c3598082c95f8c965cc920f',
-    '97bd0b06bdb0722c965ce1cfcc920f',
-    'b027097bd097c36b0b6fc9274c91aa',
-    '97b6b97bd19801ec9210c965cc920e',
-    '97bcf97c359801ec95f8c965cc920f',
-    '97bd0b06bdb0722c965ce1cfcc920f',
-    'b027097bd097c36b0b6fc9274c91aa',
-    '97b6b97bd19801ec9210c965cc920e',
-    '97bcf97c359801ec95f8c965cc920f',
-    '97bd0b06bdb0722c965ce1cfcc920f',
-    'b027097bd097c36b0b6fc9274c91aa',
-    '9778397bd19801ec9210c965cc920e',
-    '97b6b97bd19801ec95f8c965cc920f',
-    '97bd09801d98082c95f8e1cfcc920f',
-    '97bd097bd097c36b0b6fc9210c8dc2',
-    '9778397bd197c36c9210c9274c91aa',
-    '97b6b97bd19801ec95f8c965cc920e',
-    '97bd09801d98082c95f8e1cfcc920f',
-    '97bd097bd097c36b0b6fc9210c8dc2',
-    '9778397bd097c36c9210c9274c91aa',
-    '97b6b97bd19801ec95f8c965cc920e',
-    '97bcf97c3598082c95f8e1cfcc920f',
-    '97bd097bd097c36b0b6fc9210c8dc2',
-    '9778397bd097c36c9210c9274c91aa',
-    '97b6b97bd19801ec9210c965cc920e',
-    '97bcf97c3598082c95f8c965cc920f',
-    '97bd097bd097c35b0b6fc920fb0722',
-    '9778397bd097c36b0b6fc9274c91aa',
-    '97b6b97bd19801ec9210c965cc920e',
-    '97bcf97c3598082c95f8c965cc920f',
-    '97bd097bd097c35b0b6fc920fb0722',
-    '9778397bd097c36b0b6fc9274c91aa',
-    '97b6b97bd19801ec9210c965cc920e',
-    '97bcf97c359801ec95f8c965cc920f',
-    '97bd097bd097c35b0b6fc920fb0722',
-    '9778397bd097c36b0b6fc9274c91aa',
-    '97b6b97bd19801ec9210c965cc920e',
-    '97bcf97c359801ec95f8c965cc920f',
-    '97bd097bd097c35b0b6fc920fb0722',
-    '9778397bd097c36b0b6fc9274c91aa',
-    '97b6b97bd19801ec9210c965cc920e',
-    '97bcf97c359801ec95f8c965cc920f',
-    '97bd097bd07f595b0b6fc920fb0722',
-    '9778397bd097c36b0b6fc9210c8dc2',
-    '9778397bd19801ec9210c9274c920e',
-    '97b6b97bd19801ec95f8c965cc920f',
-    '97bd07f5307f595b0b0bc920fb0722',
-    '7f0e397bd097c36b0b6fc9210c8dc2',
-    '9778397bd097c36c9210c9274c920e',
-    '97b6b97bd19801ec95f8c965cc920f',
-    '97bd07f5307f595b0b0bc920fb0722',
-    '7f0e397bd097c36b0b6fc9210c8dc2',
-    '9778397bd097c36c9210c9274c91aa',
-    '97b6b97bd19801ec9210c965cc920e',
-    '97bd07f1487f595b0b0bc920fb0722',
-    '7f0e397bd097c36b0b6fc9210c8dc2',
-    '9778397bd097c36b0b6fc9274c91aa',
-    '97b6b97bd19801ec9210c965cc920e',
-    '97bcf7f1487f595b0b0bb0b6fb0722',
-    '7f0e397bd097c35b0b6fc920fb0722',
-    '9778397bd097c36b0b6fc9274c91aa',
-    '97b6b97bd19801ec9210c965cc920e',
-    '97bcf7f1487f595b0b0bb0b6fb0722',
-    '7f0e397bd097c35b0b6fc920fb0722',
-    '9778397bd097c36b0b6fc9274c91aa',
-    '97b6b97bd19801ec9210c965cc920e',
-    '97bcf7f1487f531b0b0bb0b6fb0722',
-    '7f0e397bd097c35b0b6fc920fb0722',
-    '9778397bd097c36b0b6fc9274c91aa',
-    '97b6b97bd19801ec9210c965cc920e',
-    '97bcf7f1487f531b0b0bb0b6fb0722',
-    '7f0e397bd07f595b0b6fc920fb0722',
-    '9778397bd097c36b0b6fc9274c91aa',
-    '97b6b97bd19801ec9210c9274c920e',
-    '97bcf7f0e47f531b0b0bb0b6fb0722',
-    '7f0e397bd07f595b0b0bc920fb0722',
-    '9778397bd097c36b0b6fc9210c91aa',
-    '97b6b97bd197c36c9210c9274c920e',
-    '97bcf7f0e47f531b0b0bb0b6fb0722',
-    '7f0e397bd07f595b0b0bc920fb0722',
-    '9778397bd097c36b0b6fc9210c8dc2',
-    '9778397bd097c36c9210c9274c920e',
-    '97b6b7f0e47f531b0723b0b6fb0722',
-    '7f0e37f5307f595b0b0bc920fb0722',
-    '7f0e397bd097c36b0b6fc9210c8dc2',
-    '9778397bd097c36b0b70c9274c91aa',
-    '97b6b7f0e47f531b0723b0b6fb0721',
-    '7f0e37f1487f595b0b0bb0b6fb0722',
-    '7f0e397bd097c35b0b6fc9210c8dc2',
-    '9778397bd097c36b0b6fc9274c91aa',
-    '97b6b7f0e47f531b0723b0b6fb0721',
-    '7f0e27f1487f595b0b0bb0b6fb0722',
-    '7f0e397bd097c35b0b6fc920fb0722',
-    '9778397bd097c36b0b6fc9274c91aa',
-    '97b6b7f0e47f531b0723b0b6fb0721',
-    '7f0e27f1487f531b0b0bb0b6fb0722',
-    '7f0e397bd097c35b0b6fc920fb0722',
-    '9778397bd097c36b0b6fc9274c91aa',
-    '97b6b7f0e47f531b0723b0b6fb0721',
-    '7f0e27f1487f531b0b0bb0b6fb0722',
-    '7f0e397bd097c35b0b6fc920fb0722',
-    '9778397bd097c36b0b6fc9274c91aa',
-    '97b6b7f0e47f531b0723b0b6fb0721',
-    '7f0e27f1487f531b0b0bb0b6fb0722',
-    '7f0e397bd07f595b0b0bc920fb0722',
-    '9778397bd097c36b0b6fc9274c91aa',
-    '97b6b7f0e47f531b0723b0787b0721',
-    '7f0e27f0e47f531b0b0bb0b6fb0722',
-    '7f0e397bd07f595b0b0bc920fb0722',
-    '9778397bd097c36b0b6fc9210c91aa',
-    '97b6b7f0e47f149b0723b0787b0721',
-    '7f0e27f0e47f531b0723b0b6fb0722',
-    '7f0e397bd07f595b0b0bc920fb0722',
-    '9778397bd097c36b0b6fc9210c8dc2',
-    '977837f0e37f149b0723b0787b0721',
-    '7f07e7f0e47f531b0723b0b6fb0722',
-    '7f0e37f5307f595b0b0bc920fb0722',
-    '7f0e397bd097c35b0b6fc9210c8dc2',
-    '977837f0e37f14998082b0787b0721',
-    '7f07e7f0e47f531b0723b0b6fb0721',
-    '7f0e37f1487f595b0b0bb0b6fb0722',
-    '7f0e397bd097c35b0b6fc9210c8dc2',
-    '977837f0e37f14998082b0787b06bd',
-    '7f07e7f0e47f531b0723b0b6fb0721',
-    '7f0e27f1487f531b0b0bb0b6fb0722',
-    '7f0e397bd097c35b0b6fc920fb0722',
-    '977837f0e37f14998082b0787b06bd',
-    '7f07e7f0e47f531b0723b0b6fb0721',
-    '7f0e27f1487f531b0b0bb0b6fb0722',
-    '7f0e397bd097c35b0b6fc920fb0722',
-    '977837f0e37f14998082b0787b06bd',
-    '7f07e7f0e47f531b0723b0b6fb0721',
-    '7f0e27f1487f531b0b0bb0b6fb0722',
-    '7f0e397bd07f595b0b0bc920fb0722',
-    '977837f0e37f14998082b0787b06bd',
-    '7f07e7f0e47f531b0723b0b6fb0721',
-    '7f0e27f1487f531b0b0bb0b6fb0722',
-    '7f0e397bd07f595b0b0bc920fb0722',
-    '977837f0e37f14998082b0787b06bd',
-    '7f07e7f0e47f149b0723b0787b0721',
-    '7f0e27f0e47f531b0b0bb0b6fb0722',
-    '7f0e397bd07f595b0b0bc920fb0722',
-    '977837f0e37f14998082b0723b06bd',
-    '7f07e7f0e37f149b0723b0787b0721',
-    '7f0e27f0e47f531b0723b0b6fb0722',
-    '7f0e397bd07f595b0b0bc920fb0722',
-    '977837f0e37f14898082b0723b02d5',
-    '7ec967f0e37f14998082b0787b0721',
-    '7f07e7f0e47f531b0723b0b6fb0722',
-    '7f0e37f1487f595b0b0bb0b6fb0722',
-    '7f0e37f0e37f14898082b0723b02d5',
-    '7ec967f0e37f14998082b0787b0721',
-    '7f07e7f0e47f531b0723b0b6fb0722',
-    '7f0e37f1487f531b0b0bb0b6fb0722',
-    '7f0e37f0e37f14898082b0723b02d5',
-    '7ec967f0e37f14998082b0787b06bd',
-    '7f07e7f0e47f531b0723b0b6fb0721',
-    '7f0e37f1487f531b0b0bb0b6fb0722',
-    '7f0e37f0e37f14898082b072297c35',
-    '7ec967f0e37f14998082b0787b06bd',
-    '7f07e7f0e47f531b0723b0b6fb0721',
-    '7f0e27f1487f531b0b0bb0b6fb0722',
-    '7f0e37f0e37f14898082b072297c35',
-    '7ec967f0e37f14998082b0787b06bd',
-    '7f07e7f0e47f531b0723b0b6fb0721',
-    '7f0e27f1487f531b0b0bb0b6fb0722',
-    '7f0e37f0e366aa89801eb072297c35',
-    '7ec967f0e37f14998082b0787b06bd',
-    '7f07e7f0e47f149b0723b0787b0721',
-    '7f0e27f1487f531b0b0bb0b6fb0722',
-    '7f0e37f0e366aa89801eb072297c35',
-    '7ec967f0e37f14998082b0723b06bd',
-    '7f07e7f0e47f149b0723b0787b0721',
-    '7f0e27f0e47f531b0723b0b6fb0722',
-    '7f0e37f0e366aa89801eb072297c35',
-    '7ec967f0e37f14998082b0723b06bd',
-    '7f07e7f0e37f14998083b0787b0721',
-    '7f0e27f0e47f531b0723b0b6fb0722',
-    '7f0e37f0e366aa89801eb072297c35',
-    '7ec967f0e37f14898082b0723b02d5',
-    '7f07e7f0e37f14998082b0787b0721',
-    '7f07e7f0e47f531b0723b0b6fb0722',
-    '7f0e36665b66aa89801e9808297c35',
-    '665f67f0e37f14898082b0723b02d5',
-    '7ec967f0e37f14998082b0787b0721',
-    '7f07e7f0e47f531b0723b0b6fb0722',
-    '7f0e36665b66a449801e9808297c35',
-    '665f67f0e37f14898082b0723b02d5',
-    '7ec967f0e37f14998082b0787b06bd',
-    '7f07e7f0e47f531b0723b0b6fb0721',
-    '7f0e36665b66a449801e9808297c35',
-    '665f67f0e37f14898082b072297c35',
-    '7ec967f0e37f14998082b0787b06bd',
-    '7f07e7f0e47f531b0723b0b6fb0721',
-    '7f0e26665b66a449801e9808297c35',
-    '665f67f0e37f1489801eb072297c35',
-    '7ec967f0e37f14998082b0787b06bd',
-    '7f07e7f0e47f531b0723b0b6fb0721',
-    '7f0e27f1487f531b0b0bb0b6fb0722'
+    "9778397bd097c36b0b6fc9274c91aa",
+    "97b6b97bd19801ec9210c965cc920e",
+    "97bcf97c3598082c95f8c965cc920f",
+    "97bd0b06bdb0722c965ce1cfcc920f",
+    "b027097bd097c36b0b6fc9274c91aa",
+    "97b6b97bd19801ec9210c965cc920e",
+    "97bcf97c359801ec95f8c965cc920f",
+    "97bd0b06bdb0722c965ce1cfcc920f",
+    "b027097bd097c36b0b6fc9274c91aa",
+    "97b6b97bd19801ec9210c965cc920e",
+    "97bcf97c359801ec95f8c965cc920f",
+    "97bd0b06bdb0722c965ce1cfcc920f",
+    "b027097bd097c36b0b6fc9274c91aa",
+    "9778397bd19801ec9210c965cc920e",
+    "97b6b97bd19801ec95f8c965cc920f",
+    "97bd09801d98082c95f8e1cfcc920f",
+    "97bd097bd097c36b0b6fc9210c8dc2",
+    "9778397bd197c36c9210c9274c91aa",
+    "97b6b97bd19801ec95f8c965cc920e",
+    "97bd09801d98082c95f8e1cfcc920f",
+    "97bd097bd097c36b0b6fc9210c8dc2",
+    "9778397bd097c36c9210c9274c91aa",
+    "97b6b97bd19801ec95f8c965cc920e",
+    "97bcf97c3598082c95f8e1cfcc920f",
+    "97bd097bd097c36b0b6fc9210c8dc2",
+    "9778397bd097c36c9210c9274c91aa",
+    "97b6b97bd19801ec9210c965cc920e",
+    "97bcf97c3598082c95f8c965cc920f",
+    "97bd097bd097c35b0b6fc920fb0722",
+    "9778397bd097c36b0b6fc9274c91aa",
+    "97b6b97bd19801ec9210c965cc920e",
+    "97bcf97c3598082c95f8c965cc920f",
+    "97bd097bd097c35b0b6fc920fb0722",
+    "9778397bd097c36b0b6fc9274c91aa",
+    "97b6b97bd19801ec9210c965cc920e",
+    "97bcf97c359801ec95f8c965cc920f",
+    "97bd097bd097c35b0b6fc920fb0722",
+    "9778397bd097c36b0b6fc9274c91aa",
+    "97b6b97bd19801ec9210c965cc920e",
+    "97bcf97c359801ec95f8c965cc920f",
+    "97bd097bd097c35b0b6fc920fb0722",
+    "9778397bd097c36b0b6fc9274c91aa",
+    "97b6b97bd19801ec9210c965cc920e",
+    "97bcf97c359801ec95f8c965cc920f",
+    "97bd097bd07f595b0b6fc920fb0722",
+    "9778397bd097c36b0b6fc9210c8dc2",
+    "9778397bd19801ec9210c9274c920e",
+    "97b6b97bd19801ec95f8c965cc920f",
+    "97bd07f5307f595b0b0bc920fb0722",
+    "7f0e397bd097c36b0b6fc9210c8dc2",
+    "9778397bd097c36c9210c9274c920e",
+    "97b6b97bd19801ec95f8c965cc920f",
+    "97bd07f5307f595b0b0bc920fb0722",
+    "7f0e397bd097c36b0b6fc9210c8dc2",
+    "9778397bd097c36c9210c9274c91aa",
+    "97b6b97bd19801ec9210c965cc920e",
+    "97bd07f1487f595b0b0bc920fb0722",
+    "7f0e397bd097c36b0b6fc9210c8dc2",
+    "9778397bd097c36b0b6fc9274c91aa",
+    "97b6b97bd19801ec9210c965cc920e",
+    "97bcf7f1487f595b0b0bb0b6fb0722",
+    "7f0e397bd097c35b0b6fc920fb0722",
+    "9778397bd097c36b0b6fc9274c91aa",
+    "97b6b97bd19801ec9210c965cc920e",
+    "97bcf7f1487f595b0b0bb0b6fb0722",
+    "7f0e397bd097c35b0b6fc920fb0722",
+    "9778397bd097c36b0b6fc9274c91aa",
+    "97b6b97bd19801ec9210c965cc920e",
+    "97bcf7f1487f531b0b0bb0b6fb0722",
+    "7f0e397bd097c35b0b6fc920fb0722",
+    "9778397bd097c36b0b6fc9274c91aa",
+    "97b6b97bd19801ec9210c965cc920e",
+    "97bcf7f1487f531b0b0bb0b6fb0722",
+    "7f0e397bd07f595b0b6fc920fb0722",
+    "9778397bd097c36b0b6fc9274c91aa",
+    "97b6b97bd19801ec9210c9274c920e",
+    "97bcf7f0e47f531b0b0bb0b6fb0722",
+    "7f0e397bd07f595b0b0bc920fb0722",
+    "9778397bd097c36b0b6fc9210c91aa",
+    "97b6b97bd197c36c9210c9274c920e",
+    "97bcf7f0e47f531b0b0bb0b6fb0722",
+    "7f0e397bd07f595b0b0bc920fb0722",
+    "9778397bd097c36b0b6fc9210c8dc2",
+    "9778397bd097c36c9210c9274c920e",
+    "97b6b7f0e47f531b0723b0b6fb0722",
+    "7f0e37f5307f595b0b0bc920fb0722",
+    "7f0e397bd097c36b0b6fc9210c8dc2",
+    "9778397bd097c36b0b70c9274c91aa",
+    "97b6b7f0e47f531b0723b0b6fb0721",
+    "7f0e37f1487f595b0b0bb0b6fb0722",
+    "7f0e397bd097c35b0b6fc9210c8dc2",
+    "9778397bd097c36b0b6fc9274c91aa",
+    "97b6b7f0e47f531b0723b0b6fb0721",
+    "7f0e27f1487f595b0b0bb0b6fb0722",
+    "7f0e397bd097c35b0b6fc920fb0722",
+    "9778397bd097c36b0b6fc9274c91aa",
+    "97b6b7f0e47f531b0723b0b6fb0721",
+    "7f0e27f1487f531b0b0bb0b6fb0722",
+    "7f0e397bd097c35b0b6fc920fb0722",
+    "9778397bd097c36b0b6fc9274c91aa",
+    "97b6b7f0e47f531b0723b0b6fb0721",
+    "7f0e27f1487f531b0b0bb0b6fb0722",
+    "7f0e397bd097c35b0b6fc920fb0722",
+    "9778397bd097c36b0b6fc9274c91aa",
+    "97b6b7f0e47f531b0723b0b6fb0721",
+    "7f0e27f1487f531b0b0bb0b6fb0722",
+    "7f0e397bd07f595b0b0bc920fb0722",
+    "9778397bd097c36b0b6fc9274c91aa",
+    "97b6b7f0e47f531b0723b0787b0721",
+    "7f0e27f0e47f531b0b0bb0b6fb0722",
+    "7f0e397bd07f595b0b0bc920fb0722",
+    "9778397bd097c36b0b6fc9210c91aa",
+    "97b6b7f0e47f149b0723b0787b0721",
+    "7f0e27f0e47f531b0723b0b6fb0722",
+    "7f0e397bd07f595b0b0bc920fb0722",
+    "9778397bd097c36b0b6fc9210c8dc2",
+    "977837f0e37f149b0723b0787b0721",
+    "7f07e7f0e47f531b0723b0b6fb0722",
+    "7f0e37f5307f595b0b0bc920fb0722",
+    "7f0e397bd097c35b0b6fc9210c8dc2",
+    "977837f0e37f14998082b0787b0721",
+    "7f07e7f0e47f531b0723b0b6fb0721",
+    "7f0e37f1487f595b0b0bb0b6fb0722",
+    "7f0e397bd097c35b0b6fc9210c8dc2",
+    "977837f0e37f14998082b0787b06bd",
+    "7f07e7f0e47f531b0723b0b6fb0721",
+    "7f0e27f1487f531b0b0bb0b6fb0722",
+    "7f0e397bd097c35b0b6fc920fb0722",
+    "977837f0e37f14998082b0787b06bd",
+    "7f07e7f0e47f531b0723b0b6fb0721",
+    "7f0e27f1487f531b0b0bb0b6fb0722",
+    "7f0e397bd097c35b0b6fc920fb0722",
+    "977837f0e37f14998082b0787b06bd",
+    "7f07e7f0e47f531b0723b0b6fb0721",
+    "7f0e27f1487f531b0b0bb0b6fb0722",
+    "7f0e397bd07f595b0b0bc920fb0722",
+    "977837f0e37f14998082b0787b06bd",
+    "7f07e7f0e47f531b0723b0b6fb0721",
+    "7f0e27f1487f531b0b0bb0b6fb0722",
+    "7f0e397bd07f595b0b0bc920fb0722",
+    "977837f0e37f14998082b0787b06bd",
+    "7f07e7f0e47f149b0723b0787b0721",
+    "7f0e27f0e47f531b0b0bb0b6fb0722",
+    "7f0e397bd07f595b0b0bc920fb0722",
+    "977837f0e37f14998082b0723b06bd",
+    "7f07e7f0e37f149b0723b0787b0721",
+    "7f0e27f0e47f531b0723b0b6fb0722",
+    "7f0e397bd07f595b0b0bc920fb0722",
+    "977837f0e37f14898082b0723b02d5",
+    "7ec967f0e37f14998082b0787b0721",
+    "7f07e7f0e47f531b0723b0b6fb0722",
+    "7f0e37f1487f595b0b0bb0b6fb0722",
+    "7f0e37f0e37f14898082b0723b02d5",
+    "7ec967f0e37f14998082b0787b0721",
+    "7f07e7f0e47f531b0723b0b6fb0722",
+    "7f0e37f1487f531b0b0bb0b6fb0722",
+    "7f0e37f0e37f14898082b0723b02d5",
+    "7ec967f0e37f14998082b0787b06bd",
+    "7f07e7f0e47f531b0723b0b6fb0721",
+    "7f0e37f1487f531b0b0bb0b6fb0722",
+    "7f0e37f0e37f14898082b072297c35",
+    "7ec967f0e37f14998082b0787b06bd",
+    "7f07e7f0e47f531b0723b0b6fb0721",
+    "7f0e27f1487f531b0b0bb0b6fb0722",
+    "7f0e37f0e37f14898082b072297c35",
+    "7ec967f0e37f14998082b0787b06bd",
+    "7f07e7f0e47f531b0723b0b6fb0721",
+    "7f0e27f1487f531b0b0bb0b6fb0722",
+    "7f0e37f0e366aa89801eb072297c35",
+    "7ec967f0e37f14998082b0787b06bd",
+    "7f07e7f0e47f149b0723b0787b0721",
+    "7f0e27f1487f531b0b0bb0b6fb0722",
+    "7f0e37f0e366aa89801eb072297c35",
+    "7ec967f0e37f14998082b0723b06bd",
+    "7f07e7f0e47f149b0723b0787b0721",
+    "7f0e27f0e47f531b0723b0b6fb0722",
+    "7f0e37f0e366aa89801eb072297c35",
+    "7ec967f0e37f14998082b0723b06bd",
+    "7f07e7f0e37f14998083b0787b0721",
+    "7f0e27f0e47f531b0723b0b6fb0722",
+    "7f0e37f0e366aa89801eb072297c35",
+    "7ec967f0e37f14898082b0723b02d5",
+    "7f07e7f0e37f14998082b0787b0721",
+    "7f07e7f0e47f531b0723b0b6fb0722",
+    "7f0e36665b66aa89801e9808297c35",
+    "665f67f0e37f14898082b0723b02d5",
+    "7ec967f0e37f14998082b0787b0721",
+    "7f07e7f0e47f531b0723b0b6fb0722",
+    "7f0e36665b66a449801e9808297c35",
+    "665f67f0e37f14898082b0723b02d5",
+    "7ec967f0e37f14998082b0787b06bd",
+    "7f07e7f0e47f531b0723b0b6fb0721",
+    "7f0e36665b66a449801e9808297c35",
+    "665f67f0e37f14898082b072297c35",
+    "7ec967f0e37f14998082b0787b06bd",
+    "7f07e7f0e47f531b0723b0b6fb0721",
+    "7f0e26665b66a449801e9808297c35",
+    "665f67f0e37f1489801eb072297c35",
+    "7ec967f0e37f14998082b0787b06bd",
+    "7f07e7f0e47f531b0723b0b6fb0721",
+    "7f0e27f1487f531b0b0bb0b6fb0722",
   ],
 
   /**
@@ -475,7 +537,19 @@ export default {
    * @trans ['日','一','二','三','四','五','六','七','八','九','十']
    * @return Cn string
    */
-  nStr1: ['\u65e5', '\u4e00', '\u4e8c', '\u4e09', '\u56db', '\u4e94', '\u516d', '\u4e03', '\u516b', '\u4e5d', '\u5341'],
+  nStr1: [
+    "\u65e5",
+    "\u4e00",
+    "\u4e8c",
+    "\u4e09",
+    "\u56db",
+    "\u4e94",
+    "\u516d",
+    "\u4e03",
+    "\u516b",
+    "\u4e5d",
+    "\u5341",
+  ],
 
   /**
    * 日期转农历称呼速查表
@@ -483,7 +557,7 @@ export default {
    * @trans ['初','十','廿','卅']
    * @return Cn string
    */
-  nStr2: ['\u521d', '\u5341', '\u5eff', '\u5345'],
+  nStr2: ["\u521d", "\u5341", "\u5eff", "\u5345"],
 
   /**
    * 月份转农历称呼速查表
@@ -491,7 +565,20 @@ export default {
    * @trans ['正','一','二','三','四','五','六','七','八','九','十','冬','腊']
    * @return Cn string
    */
-  nStr3: ['\u6b63', '\u4e8c', '\u4e09', '\u56db', '\u4e94', '\u516d', '\u4e03', '\u516b', '\u4e5d', '\u5341', '\u51ac', '\u814a'],
+  nStr3: [
+    "\u6b63",
+    "\u4e8c",
+    "\u4e09",
+    "\u56db",
+    "\u4e94",
+    "\u516d",
+    "\u4e03",
+    "\u516b",
+    "\u4e5d",
+    "\u5341",
+    "\u51ac",
+    "\u814a",
+  ],
 
   /**
    * 返回农历y年一整年的总天数
@@ -499,7 +586,7 @@ export default {
    * @return Number
    * @eg:var count = calendar.lYearDays(1987) ;//count=387
    */
-  lYearDays: function(y) {
+  lYearDays(y) {
     let sum = 348;
     for (let i = 0x8000; i > 0x8; i >>= 1) {
       sum += this.lunarInfo[y - 1900] & i ? 1 : 0;
@@ -513,7 +600,7 @@ export default {
    * @return Number (0-12)
    * @eg:var leapMonth = calendar.leapMonth(1987) ;//leapMonth=6
    */
-  leapMonth: function(y) {
+  leapMonth(y) {
     // 闰字编码 \u95f0
     return this.lunarInfo[y - 1900] & 0xf;
   },
@@ -524,7 +611,7 @@ export default {
    * @return Number (0、29、30)
    * @eg:var leapMonthDay = calendar.leapDays(1987) ;//leapMonthDay=29
    */
-  leapDays: function(y) {
+  leapDays(y) {
     if (this.leapMonth(y)) {
       return this.lunarInfo[y - 1900] & 0x10000 ? 30 : 29;
     }
@@ -537,7 +624,7 @@ export default {
    * @return Number (-1、29、30)
    * @eg:var MonthDay = calendar.monthDays(1987,9) ;//MonthDay=29
    */
-  monthDays: function(y, m) {
+  monthDays(y, m) {
     if (m > 12 || m < 1) {
       return -1;
     } // 月份参数从1至12，参数错误返回-1
@@ -550,7 +637,7 @@ export default {
    * @return Number (-1、28、29、30、31)
    * @eg:var solarMonthDay = calendar.leapDays(1987) ;//solarMonthDay=30
    */
-  solarDays: function(y, m) {
+  solarDays(y, m) {
     if (m > 12 || m < 1) {
       return -1;
     } // 若参数错误 返回-1
@@ -568,7 +655,7 @@ export default {
    * @param  lYear 农历年的年份数
    * @return Cn string
    */
-  toGanZhiYear: function(lYear) {
+  toGanZhiYear(lYear) {
     let ganKey = (lYear - 3) % 10;
     let zhiKey = (lYear - 3) % 12;
     if (ganKey === 0) ganKey = 10; // 如果余数为0则为最后一个天干
@@ -582,10 +669,13 @@ export default {
    * @param  cDay [description]
    * @return Cn string
    */
-  toAstro: function(cMonth, cDay) {
-    let s = '\u9b54\u7faf\u6c34\u74f6\u53cc\u9c7c\u767d\u7f8a\u91d1\u725b\u53cc\u5b50\u5de8\u87f9\u72ee\u5b50\u5904\u5973\u5929\u79e4\u5929\u874e\u5c04\u624b\u9b54\u7faf';
+  toAstro(cMonth, cDay) {
+    let s =
+      "\u9b54\u7faf\u6c34\u74f6\u53cc\u9c7c\u767d\u7f8a\u91d1\u725b\u53cc\u5b50\u5de8\u87f9\u72ee\u5b50\u5904\u5973\u5929\u79e4\u5929\u874e\u5c04\u624b\u9b54\u7faf";
     let arr = [20, 19, 21, 21, 21, 22, 23, 23, 23, 23, 22, 22];
-    return s.substr(cMonth * 2 - (cDay < arr[cMonth - 1] ? 2 : 0), 2) + '\u5ea7'; // 座
+    return (
+      s.substr(cMonth * 2 - (cDay < arr[cMonth - 1] ? 2 : 0), 2) + "\u5ea7"
+    ); // 座
   },
 
   /**
@@ -593,7 +683,7 @@ export default {
    * @param offset 相对甲子的偏移量
    * @return Cn string
    */
-  toGanZhi: function(offset) {
+  toGanZhi(offset) {
     return this.Gan[offset % 10] + this.Zhi[offset % 12];
   },
 
@@ -603,7 +693,7 @@ export default {
    * @return day Number
    * @eg:var _24 = calendar.getTerm(1987,3) ;//_24=4;意即1987年2月4日立春
    */
-  getTerm: function(y, n) {
+  getTerm(y, n) {
     if (y < 1900 || y > 2100) {
       return -1;
     }
@@ -611,8 +701,40 @@ export default {
       return -1;
     }
     let _table = this.sTermInfo[y - 1900];
-    let _info = [parseInt('0x' + _table.substr(0, 5)).toString(), parseInt('0x' + _table.substr(5, 5)).toString(), parseInt('0x' + _table.substr(10, 5)).toString(), parseInt('0x' + _table.substr(15, 5)).toString(), parseInt('0x' + _table.substr(20, 5)).toString(), parseInt('0x' + _table.substr(25, 5)).toString()];
-    var _calday = [_info[0].substr(0, 1), _info[0].substr(1, 2), _info[0].substr(3, 1), _info[0].substr(4, 2), _info[1].substr(0, 1), _info[1].substr(1, 2), _info[1].substr(3, 1), _info[1].substr(4, 2), _info[2].substr(0, 1), _info[2].substr(1, 2), _info[2].substr(3, 1), _info[2].substr(4, 2), _info[3].substr(0, 1), _info[3].substr(1, 2), _info[3].substr(3, 1), _info[3].substr(4, 2), _info[4].substr(0, 1), _info[4].substr(1, 2), _info[4].substr(3, 1), _info[4].substr(4, 2), _info[5].substr(0, 1), _info[5].substr(1, 2), _info[5].substr(3, 1), _info[5].substr(4, 2)];
+    let _info = [
+      parseInt("0x" + _table.substr(0, 5)).toString(),
+      parseInt("0x" + _table.substr(5, 5)).toString(),
+      parseInt("0x" + _table.substr(10, 5)).toString(),
+      parseInt("0x" + _table.substr(15, 5)).toString(),
+      parseInt("0x" + _table.substr(20, 5)).toString(),
+      parseInt("0x" + _table.substr(25, 5)).toString(),
+    ];
+    var _calday = [
+      _info[0].substr(0, 1),
+      _info[0].substr(1, 2),
+      _info[0].substr(3, 1),
+      _info[0].substr(4, 2),
+      _info[1].substr(0, 1),
+      _info[1].substr(1, 2),
+      _info[1].substr(3, 1),
+      _info[1].substr(4, 2),
+      _info[2].substr(0, 1),
+      _info[2].substr(1, 2),
+      _info[2].substr(3, 1),
+      _info[2].substr(4, 2),
+      _info[3].substr(0, 1),
+      _info[3].substr(1, 2),
+      _info[3].substr(3, 1),
+      _info[3].substr(4, 2),
+      _info[4].substr(0, 1),
+      _info[4].substr(1, 2),
+      _info[4].substr(3, 1),
+      _info[4].substr(4, 2),
+      _info[5].substr(0, 1),
+      _info[5].substr(1, 2),
+      _info[5].substr(3, 1),
+      _info[5].substr(4, 2),
+    ];
     return parseInt(_calday[n - 1]);
   },
 
@@ -622,13 +744,13 @@ export default {
    * @return Cn string
    * @eg:var cnMonth = calendar.toChinaMonth(12) ;//cnMonth='腊月'
    */
-  toChinaMonth: function(m) {
+  toChinaMonth(m) {
     // 月 => \u6708
     if (m > 12 || m < 1) {
       return -1;
     } // 若参数错误 返回-1
     let s = this.nStr3[m - 1];
-    s += '\u6708'; // 加上月字
+    s += "\u6708"; // 加上月字
     return s;
   },
 
@@ -638,18 +760,18 @@ export default {
    * @return Cn string
    * @eg:var cnDay = calendar.toChinaDay(21) ;//cnMonth='廿一'
    */
-  toChinaDay: function(d) {
+  toChinaDay(d) {
     // 日 => \u65e5
     let s;
     switch (d) {
       case 10:
-        s = '\u521d\u5341';
+        s = "\u521d\u5341";
         break;
       case 20:
-        s = '\u4e8c\u5341';
+        s = "\u4e8c\u5341";
         break;
       case 30:
-        s = '\u4e09\u5341';
+        s = "\u4e09\u5341";
         break;
       default:
         s = this.nStr2[Math.floor(d / 10)];
@@ -664,7 +786,7 @@ export default {
    * @return Cn string
    * @eg:var animal = calendar.getAnimal(1987) ;//animal='兔'
    */
-  getAnimal: function(y) {
+  getAnimal(y) {
     return this.Animals[(y - 4) % 12];
   },
 
@@ -676,7 +798,7 @@ export default {
    * @return JSON object
    * @eg:console.log(calendar.solar2lunar(1987,11,01));
    */
-  solar2lunar: function(y, m, d) {
+  solar2lunar(y, m, d) {
     // 参数区间1900.1.31~2100.12.31
     // 年份限定、上限
     if (y < 1900 || y > 2100) {
@@ -700,7 +822,10 @@ export default {
     y = objDate.getFullYear();
     m = objDate.getMonth() + 1;
     d = objDate.getDate();
-    let offset = (Date.UTC(objDate.getFullYear(), objDate.getMonth(), objDate.getDate()) - Date.UTC(1900, 0, 31)) / 86400000;
+    let offset =
+      (Date.UTC(objDate.getFullYear(), objDate.getMonth(), objDate.getDate()) -
+        Date.UTC(1900, 0, 31)) /
+      86400000;
     for (i = 1900; i < 2101 && offset > 0; i++) {
       temp = this.lYearDays(i);
       offset -= temp;
@@ -713,7 +838,11 @@ export default {
     // 是否今天
     let isTodayObj = new Date();
     let isToday = false;
-    if (isTodayObj.getFullYear() === y && isTodayObj.getMonth() + 1 === m && isTodayObj.getDate() === d) {
+    if (
+      isTodayObj.getFullYear() === y &&
+      isTodayObj.getMonth() + 1 === m &&
+      isTodayObj.getDate() === d
+    ) {
       isToday = true;
     }
     // 星期几
@@ -793,7 +922,27 @@ export default {
     // 该日期所属的星座
     let astro = this.toAstro(m, d);
 
-    return { lYear: year, lMonth: month, lDay: day, Animal: this.getAnimal(year), IMonthCn: (isLeap ? '\u95f0' : '') + this.toChinaMonth(month), IDayCn: this.toChinaDay(day), cYear: y, cMonth: m, cDay: d, gzYear: gzY, gzMonth: gzM, gzDay: gzD, isToday: isToday, isLeap: isLeap, nWeek: nWeek, ncWeek: '\u661f\u671f' + cWeek, isTerm: isTerm, Term: Term, astro: astro };
+    return {
+      lYear: year,
+      lMonth: month,
+      lDay: day,
+      Animal: this.getAnimal(year),
+      IMonthCn: (isLeap ? "\u95f0" : "") + this.toChinaMonth(month),
+      IDayCn: this.toChinaDay(day),
+      cYear: y,
+      cMonth: m,
+      cDay: d,
+      gzYear: gzY,
+      gzMonth: gzM,
+      gzDay: gzD,
+      isToday: isToday,
+      isLeap: isLeap,
+      nWeek: nWeek,
+      ncWeek: "\u661f\u671f" + cWeek,
+      isTerm: isTerm,
+      Term: Term,
+      astro: astro,
+    };
   },
 
   /**
@@ -805,7 +954,7 @@ export default {
    * @return JSON object
    * @eg:console.log(calendar.lunar2solar(1987,9,10));
    */
-  lunar2solar: function(y, m, d, isLeapMonth) {
+  lunar2solar(y, m, d, isLeapMonth) {
     // 参数区间1900.1.31~2100.12.1
     isLeapMonth = !!isLeapMonth;
     // eslint-disable-next-line
@@ -816,7 +965,10 @@ export default {
     if (isLeapMonth && leapMonth !== m) {
       return -1;
     } // 传参要求计算该闰月公历 但该年得出的闰月与传参的月份并不同
-    if ((y === 2100 && m === 12 && d > 1) || (y === 1900 && m === 1 && d < 31)) {
+    if (
+      (y === 2100 && m === 12 && d > 1) ||
+      (y === 1900 && m === 1 && d < 31)
+    ) {
       return -1;
     } // 超出了最大极限值
     let day = this.monthDays(y, m);
@@ -860,5 +1012,5 @@ export default {
     let cD = calObj.getUTCDate();
 
     return this.solar2lunar(cY, cM, cD);
-  }
+  },
 };

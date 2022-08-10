@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+ul,
+ol,
+dl {
+  list-style: none;
+}
+
+$font: "PingFang SC", "Microsoft YaHei", Helvetica, Arial, sans-serif;
+
+body {
+  line-height: 1;
+  font-family: $font;
+}
+
+input,
+textarea {
+  width: 100%;
+  height: inherit;
+  font-family: $font;
+  font-size: inherit;
+  color: inherit;
+  appearance: none;
+  border-radius: 0;
+  outline: 0 none;
+  border: 0 none;
+  resize: none;
+  background: none;
+  box-sizing: border-box;
+  &::placeholder {
+    color: inherit;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: 0 none;
+}
+
+.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.frow {
+  display: flex;
+  align-items: center;
+}
+
+.fcol {
+  @extend .frow;
+  flex-direction: column;
+}
+
+.frowc {
+  @extend .frow;
+  justify-content: center;
+  align-items: center;
+}
+
+.fcolc {
+  @extend .frowc;
+  @extend .fcol;
+}
+
+.flex {
+  flex: 1;
+}
+
+.elps {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.bold {
+  font-weight: bold;
+}

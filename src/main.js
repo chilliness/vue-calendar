@@ -1,13 +1,10 @@
-import Vue from 'vue';
-import App from './App.vue';
-import router from './router';
-import store from './store';
-import './common/scss/reset.scss';
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
 
-Vue.config.productionTip = false;
+import "./assets/css/base.scss";
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app');
+let app = createApp(App);
+
+app.use(store).use(router).mount("#app");
