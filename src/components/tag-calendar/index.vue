@@ -1,5 +1,5 @@
 <template>
-  <div class="calendar-wrap">
+  <div class="comp-wrap">
     <div class="caption-box frow">
       <span class="btn btn-prev frowc" @click="handleInit(prevYM)"></span>
       <span class="text frowc">{{ currYM }}</span>
@@ -7,21 +7,11 @@
     </div>
     <div class="ctx-box">
       <ul class="week-box frow">
-        <li class="item-box frowc" v-for="(item, i) in cNavs" :key="i">
-          {{ item }}
-        </li>
+        <li class="item-box frowc" v-for="(item, i) in cNavs" :key="i">{{ item }}</li>
       </ul>
       <div class="list-box frow">
-        <div
-          class="item-box frowc"
-          :class="{ invalid: !item.flag }"
-          v-for="(item, i) in list"
-          :key="i"
-        >
-          <div
-            class="text-box fcolc"
-            :class="{ active: isMark && item.flag && item.text === currD }"
-          >
+        <div class="item-box frowc" :class="{ invalid: !item.flag }" v-for="(item, i) in list" :key="i">
+          <div class="text-box fcolc" :class="{ active: isMark && item.flag && item.text === currD }">
             <div class="text">{{ item.text }}</div>
             <div class="lunar" v-if="isLunar">{{ item.lunar }}</div>
           </div>
@@ -36,7 +26,6 @@ import { toRefs, reactive, computed, onMounted } from "vue";
 import calendar from "./js/calendar";
 
 export default {
-  name: "Calendar",
   props: {
     // 是否启用西方模式
     isWest: {
@@ -62,6 +51,7 @@ export default {
       nextYM: "",
       currD: "",
     });
+
     vm.cNavs = computed(() => {
       let arr = [..."一二三四五六日"];
       props.isWest && arr.unshift(arr.pop());
@@ -118,20 +108,14 @@ export default {
           let temp = [];
           for (let i = 0; i < item; i++) {
             let text = !index ? pDays + i + 1 - item : i + 1;
-            temp.push({
-              text,
-              date: [date, String(text).padStart(2, 0)].join("-"),
-            });
+            temp.push({ text, date: [date, String(text).padStart(2, 0)].join("-") });
           }
           return prev.concat([temp]);
         }, []),
       };
     };
     vm.handleInit = (strDate = "2022-08") => {
-      let { cDate, pDate, nDate, cDay, cList } = vm.handleDateMark(
-        strDate,
-        props.isWest
-      );
+      let { cDate, pDate, nDate, cDay, cList } = vm.handleDateMark(strDate, props.isWest);
       vm.currYM = cDate.replace(/(\d+)-(\d+)/g, "$1年$2月");
       vm.prevYM = pDate;
       vm.nextYM = nDate;
@@ -152,7 +136,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.calendar-wrap {
+.comp-wrap {
   font-size: 16px;
   min-width: 320px;
   max-width: 640px;

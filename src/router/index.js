@@ -1,25 +1,26 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-const routes = [
+let routes = [
   {
     path: "/",
     name: "calendar",
-    component: () => import("@/components/tag-calendar"),
+    component: () => import("@/components/tag-calendar/index.vue"),
   },
   {
     path: "/todo",
     name: "todo",
-    component: () => import("@/components/tag-todo"),
+    component: () => import("@/components/tag-todo/index.vue"),
   },
   {
-    path: "/:pathMatch(.*)*",
+    path: "/:pathMatch(.*)",
     redirect: "/",
   },
 ];
 
-const router = createRouter({
+let router = createRouter({
   history: createWebHashHistory(),
   routes,
+  scrollBehavior: (to, from, savedPosition) => savedPosition ?? { top: 0 },
 });
 
 export default router;
